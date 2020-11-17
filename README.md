@@ -2,7 +2,7 @@
 
 ## Git
 
-#### Clean commits
+#### Merge commits
 - avoid multiple commits about the same changes (e.g. many attempts to do something)
 - after all of those commits, we want to merge them in one clean commit only
 - `git rebase -i HEAD~3` (change the number until you see the first commit)
@@ -10,6 +10,12 @@
 - in the next editor, remove the multiple commit messages, set one message, and save
 - `git push -f` (with force option) to change the commit list
 - only the first commit will remain
+
+#### Change commit name
+- `git commit --amend`
+
+#### Remove added files (with `git add`)
+- `git restore --staged <filepath>`
 
 
 
