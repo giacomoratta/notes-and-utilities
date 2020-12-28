@@ -23,6 +23,7 @@
 
 #### Free ports
 - `netstat -anp | grep "8080"`: check which processes are using port 8080 
+- or `sudo ss -lp "sport = 8080"`: check pid=...
 - `kill -9 <PID>`: last column of previous output has the `PID`
 
 ## Developing
