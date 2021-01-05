@@ -23,8 +23,31 @@
 
 #### Free ports
 - `netstat -anp | grep "8080"`: check which processes are using port 8080 
+- ord `sudo netstat -tulpn | grep :80`: processes using port 80
 - or `sudo ss -lp "sport = 8080"`: check pid=...
 - `kill -9 <PID>`: last column of previous output has the `PID`
 
 ## Developing
 - `alias java-set8="sudo update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java"`: set java 8 as alternative
+
+
+## Files
+
+#### Search for text
+- `grep -ri listen /etc/apache2`: check the word "listen" in each file of the absolute path
+
+
+
+## Services
+
+#### Basics
+- `/etc/init.d/apache2 start` (stop, restart, status, etc.)
+- `sudo service nginx start` (stop, restart, status, etc.)
+
+
+
+## Apache2 (Ubuntu 20.04)
+- `sudo apt install apache2`
+- `sudo nano /etc/apache2/apache2.conf`: change configuration
+- `sudo apachectl configtest`: check syntax of configuration file
+
