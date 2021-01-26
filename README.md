@@ -17,6 +17,9 @@
 #### Remove added files (with `git add`)
 - `git restore --staged <filepath>`
 
+#### Deleting multiple local branches
+- `git branch | grep "<pattern>"`
+- `git branch | grep "<pattern>" | xargs git branch -D`
 
 
 ## Network
