@@ -54,3 +54,11 @@
 - `sudo nano /etc/apache2/apache2.conf`: change configuration
 - `sudo apachectl configtest`: check syntax of configuration file
 
+
+## File System
+- `lsblk -f`: list block devices and more informations
+- `blkid`: locate/print block device attributes
+- `sudo file -s /dev/nvme0n1`: information about a specific device, such as its file system type
+
+
+
