@@ -53,7 +53,12 @@
 - `sudo apt install apache2`
 - `sudo nano /etc/apache2/apache2.conf`: change configuration
 - `sudo apachectl configtest`: check syntax of configuration file
+- `sudo systemctl reload apache2`: reload apache2
 
+#### Domains
+- `cd /etc/apache2/sites-available/`: go to available websites .conf files
+- `sudo a2ensite 000-default`: enable the default website
+- `sudo a2dissite 000-default`: disable the default website
 
 ## File System
 - `lsblk -f`: list block devices and more informations
