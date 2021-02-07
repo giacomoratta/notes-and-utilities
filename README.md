@@ -22,13 +22,19 @@
 - `git branch | grep "<pattern>" | xargs git branch -D`
 
 
-## Network
+## Networking
 
 #### Free ports
 - `netstat -anp | grep "8080"`: check which processes are using port 8080 
 - ord `sudo netstat -tulpn | grep :80`: processes using port 80
 - or `sudo ss -lp "sport = 8080"`: check pid=...
 - `kill -9 <PID>`: last column of previous output has the `PID`
+
+#### Troubleshooting
+- `traceroute 127.0.0.1`: trace the route to a host
+- `nslookup localhost`: interactive queries to DNS
+- `dig localhost`: DNS lookup utility (more verbose than `nslookup`)
+
 
 ## Developing
 - `alias java-set8="sudo update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java"`: set java 8 as alternative
