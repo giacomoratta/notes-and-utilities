@@ -72,4 +72,19 @@
 - `sudo file -s /dev/nvme0n1`: information about a specific device, such as its file system type
 
 
+## Docker
+
+#### Basics
+- `docker image ls -a`: list all images (hidden/intermediate included)
+- `docker ps -a`: list all containers
+
+#### Containers
+- `docker stop 84a4114a37d9`: stop 1 container
+- `docker stop $(docker ps -a -q)`: stop all running containers
+
+#### Cleaning
+- `docker container rm 84a4114a37d9`: remove 1 container
+- `docker rmi 9329ff23f2`: remove 1 image
+- `docker rm $(docker ps -a -q)`: remove all containers
+- `docker rmi $(docker images -q)`: remove all images
 
