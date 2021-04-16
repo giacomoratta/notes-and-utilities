@@ -45,6 +45,10 @@
 #### Search for text
 - `grep -ri listen /etc/apache2`: check the word "listen" in each file of the absolute path
 
+#### Edit files
+- `sed -i'' 1d large-data-file.csv`: remove the first line
+- 
+
 
 
 ## Services
@@ -87,4 +91,22 @@
 - `docker rmi 9329ff23f2`: remove 1 image
 - `docker rm $(docker ps -a -q)`: remove all containers
 - `docker rmi $(docker images -q)`: remove all images
+
+
+## MySQL
+
+#### The basics
+- `mysql --port=3306 -h localhost -u myname -p`: connect with password
+- `mysql> select * from mysql.user;`: show users
+- `mysql> DESC mysql.user;`: show users with less info
+- `mysql> USE database_name;`: select the database to work with
+- `mysql> SHOW FULL TABLES;` or `mysql> SHOW TABLES;`: show tables of a database
+
+#### Users and privileges
+- `mysql> SHOW GRANTS FOR username;`: check the privileges given to an user
+- `mysql> CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';`: create a new user with a password
+- `mysql> GRANT ALL PRIVILEGES ON *.* TO 'user_name'@'localhost' WITH GRANT OPTION;';`: make a super-user
+- `mysql> CREATE USER 'username'@'%' IDENTIFIED BY 'password';`: create a new user with a password for any host
+- `mysql> GRANT ALL PRIVILEGES ON *.* TO 'username'@'%' WITH GRANT OPTION;`: create a new user with a password for any host
+- `mysql> FLUSH PRIVILEGES;`: reload all the privileges
 
