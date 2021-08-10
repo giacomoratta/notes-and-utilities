@@ -110,3 +110,11 @@
 - `mysql> GRANT ALL PRIVILEGES ON *.* TO 'username'@'%' WITH GRANT OPTION;`: create a new user with a password for any host
 - `mysql> FLUSH PRIVILEGES;`: reload all the privileges
 
+
+## AWS
+
+#### SSM Parameter Store
+- `aws ssm get-parameters --names /my-app/dev/db-url /my-app/dev/db-password`
+- `aws ssm get-parameters --names /my-app/dev/db-url /my-app/dev/db-password --with-decryption`: automatically encoded secrets with KMS key
+- `aws ssm get-parameters-by-path --path /my-app/ --recursive`: lists all parameters under the path
+
