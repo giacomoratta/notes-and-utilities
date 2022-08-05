@@ -113,6 +113,13 @@
 
 ## AWS
 
+#### Connect via CLI
+- `cat ~/.aws/credentials` - check if credentials are present
+- `cat ~/.aws/config` - check config details
+- `aws configure --profile abc123` - add credentials for profile "abc123"
+- `export AWS_DEFAULT_PROFILE=abc123` - set default profile, to avoid `--profile` parameter
+- `aws s3api list-buckets` - simple command for a quick check
+
 #### SSM Parameter Store
 - `aws ssm get-parameters --names /my-app/dev/db-url /my-app/dev/db-password`
 - `aws ssm get-parameters --names /my-app/dev/db-url /my-app/dev/db-password --with-decryption`: automatically encoded secrets with KMS key
