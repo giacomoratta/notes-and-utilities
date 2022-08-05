@@ -8,10 +8,10 @@
 - `git rebase -i HEAD~3` (change the number until you see the first commit)
 - in the editor, change to `s` all the commits behind the first one (which has to be `pick`), and save
 - in the next editor, remove the multiple commit messages, set one message, and save
-- `git push -f` (with force option) to change the commit list
+- `git push origin +branch-name-123` (with force option) to change the commit list
 - only the first commit will remain
 
-#### Change commit name
+#### Change current commit (name, add new changes, etc.)
 - `git commit --amend`
 
 #### Remove added files (with `git add`)
@@ -46,8 +46,7 @@
 - `grep -ri listen /etc/apache2`: check the word "listen" in each file of the absolute path
 
 #### Edit files
-- `sed -i'' 1d large-data-file.csv`: remove the first line
-- 
+- `sed -i'' 1d large-data-file.csv`: remove the first line 
 
 
 
