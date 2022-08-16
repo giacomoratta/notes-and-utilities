@@ -2,24 +2,31 @@
 
 ## Git
 
+#### Restore files
+- `git restore <filepath>`: restore the previous version (from previous commit)
+- `git restore --staged <filepath>` (remove file from commit, added with `git add`)
+
 #### Merge commits
 - avoid multiple commits about the same changes (e.g. many attempts to do something)
 - after all of those commits, we want to merge them in one clean commit only
 - `git rebase -i HEAD~3` (change the number until you see the first commit)
 - in the editor, change to `s` all the commits behind the first one (which has to be `pick`), and save
 - in the next editor, remove the multiple commit messages, set one message, and save
-- `git push origin +branch-name-123` (with force option) to change the commit list
+- `git push origin +branch-name-123` to force push to this branch only
 - only the first commit will remain
 
 #### Change current commit (name, add new changes, etc.)
 - `git commit --amend`
-
-#### Remove added files (with `git add`)
-- `git restore --staged <filepath>`
+- `git push origin +branch-name-123`
 
 #### Deleting multiple local branches
 - `git branch | grep "<pattern>"`
 - `git branch | grep "<pattern>" | xargs git branch -D`
+
+#### Stash
+- `git stash clear` - deletes all stashed changes
+- `git stash -m "possible changes 1"` - pushes a stash with a label
+- `git stash push src/f1.js src/f2.js` - pushes a stash by listing files
 
 
 ## Networking
@@ -124,3 +131,10 @@
 - `aws ssm get-parameters --names /my-app/dev/db-url /my-app/dev/db-password --with-decryption`: automatically encoded secrets with KMS key
 - `aws ssm get-parameters-by-path --path /my-app/ --recursive`: lists all parameters under the path
 
+
+## JEST
+
+#### Investigations
+- `jest --runInBand --detectOpenHandles --config jest.config.json --runTestsByPath src/server/**/*.test.js`
+- `--runInBand`: run tests sequentially
+- `--detectOpenHandles`: wait for open handles
