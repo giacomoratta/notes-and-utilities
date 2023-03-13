@@ -2,6 +2,7 @@
 
 ## Files, directories, search
 - `find . -type f -exec grep -H 'my text' {} \;`: search "my text" in all files in the current directory
+- `ln -s /src-location /dest-location`: create a symbolic link 
 
 
 ## Git
