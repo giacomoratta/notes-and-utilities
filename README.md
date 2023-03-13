@@ -94,10 +94,6 @@
 
 #### Images
 - `docker build -t abc123 .`: build the image
-- print all image IDs of intermediates <none>; the size is cumulative, so nothing to care about... just look at the list sometimes
-  `docker images -a | awk '/none/ {print $3}'`
-  `docker rmi $(docker images -a | awk '/none/ {print $3}')`
-
 
 #### Containers: execution
 - `docker run -d -t abc123`: run container based on image "abc123", detached (-d) and with terminal (-t)
@@ -108,14 +104,15 @@
 #### Images: cleaning
 - `docker rmi 9329ff23f2`: remove 1 image
 - `docker rmi $(docker images -q)`: remove all images
-
+- print all image IDs of intermediates <none>; the size is cumulative, so nothing to care about... just look at the list sometimes
+  `docker images -a | awk '/none/ {print $3}'`
+  `docker rmi $(docker images -a | awk '/none/ {print $3}')`
 
 #### Containers: stop and cleaning
 - `docker stop 84a4114a37d9`: stop 1 container
 - `docker stop $(docker ps -a -q)`: stop all running containers
 - `docker container rm 84a4114a37d9`: remove 1 container
 - `docker rm $(docker ps -a -q)`: remove all containers
-
 
 ## MySQL
 
