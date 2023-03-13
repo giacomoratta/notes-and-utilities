@@ -1,5 +1,9 @@
 # Notes and Utilities
 
+## Files, directories, search
+- `find . -type f -exec grep -H 'my text' {} \;`: search "my text" in all files in the current directory
+
+
 ## Git
 
 #### Restore files
@@ -88,15 +92,29 @@
 - `docker image ls -a`: list all images (hidden/intermediate included)
 - `docker ps -a`: list all containers
 
-#### Containers
+#### Images
+- `docker build -t abc123 .`: build the image
+- print all image IDs of intermediates <none>; the size is cumulative, so nothing to care about... just look at the list sometimes
+  `docker images -a | awk '/none/ {print $3}'`
+  `docker rmi $(docker images -a | awk '/none/ {print $3}')`
+
+
+#### Containers: execution
+- `docker run -d -t abc123`: run container based on image "abc123", detached (-d) and with terminal (-t)
+- `docker run -d -t -p 3020:3000 abc123`
+- `docker run -d -t -P abc123`: expose ports with automatically assigned one (-P)
+- `docker exec -ti e390ceb99781 sh`: access the container with a terminal
+
+#### Images: cleaning
+- `docker rmi 9329ff23f2`: remove 1 image
+- `docker rmi $(docker images -q)`: remove all images
+
+
+#### Containers: stop and cleaning
 - `docker stop 84a4114a37d9`: stop 1 container
 - `docker stop $(docker ps -a -q)`: stop all running containers
-
-#### Cleaning
 - `docker container rm 84a4114a37d9`: remove 1 container
-- `docker rmi 9329ff23f2`: remove 1 image
 - `docker rm $(docker ps -a -q)`: remove all containers
-- `docker rmi $(docker images -q)`: remove all images
 
 
 ## MySQL
